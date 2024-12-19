@@ -5,8 +5,8 @@
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "build": "tsup src/index.ts --format esm,cjs --dts",
-    "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
+    "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
+    "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch"
   },
   "keywords": [],
   "author": "",
@@ -15,10 +15,16 @@
   "devDependencies": {
     "@fialho-ui/tokens": "*",
     "@fialho-ui/ts-config": "*",
+    "@types/react": "^19.0.2",
+    "@types/react-dom": "^19.0.2",
+    "react": "^19.0.0",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   },
   "eslintConfig": {
     "extends": "@fialho-ui/eslint-config"
+  },
+  "dependencies": {
+    "@stitches/react": "^1.2.8"
   }
 }
