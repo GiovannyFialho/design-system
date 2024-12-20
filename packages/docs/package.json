@@ -1,5 +1,5 @@
 {
-  "name": "@fialho-ui/docs",
+  "name": "docs",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -16,9 +16,6 @@
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
-    "@fialho-ui/react": "*",
-    "@fialho-ui/tokens": "*",
-    "@fialho-ui/eslint-config": "*",
     "@chromatic-com/storybook": "^3.2.3",
     "@eslint/js": "^9.17.0",
     "@storybook/addon-essentials": "^8.4.7",
@@ -43,7 +40,6 @@
   },
   "eslintConfig": {
     "extends": [
-      "@fialho-ui/eslint-config",
       "plugin:storybook/recommended"
     ]
   }
