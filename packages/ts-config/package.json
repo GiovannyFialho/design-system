@@ -2,7 +2,7 @@
   "name": "@fialho-ui/ts-config",
   "version": "1.0.0",
   "license": "MIT",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "@types/node": "^22.10.2"
   }
