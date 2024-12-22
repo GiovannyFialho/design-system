@@ -17,5 +17,6 @@ export const Primary: Story = {};
 export const CustomTag: Story = {
   args: {
     as: "strong",
+    size: "4xl",
   },
 };
