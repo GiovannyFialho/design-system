@@ -25,6 +25,8 @@
     "extends": "@fialho-ui/eslint-config"
   },
   "dependencies": {
-    "@stitches/react": "^1.2.8"
+    "@radix-ui/react-avatar": "^1.1.2",
+    "@stitches/react": "^1.2.8",
+    "phosphor-react": "^1.4.1"
   }
 }

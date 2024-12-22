@@ -17,5 +17,5 @@
 - [ ] TextInput
 - [ ] TextArea
 - [ ] Checkbox
-- [ ] Avatar
+- [x] Avatar
 - [ ] MultiStep
