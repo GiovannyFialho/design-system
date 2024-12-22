@@ -10,7 +10,7 @@
 - [x] Space
 
 ## Components
-- [ ] Text
+- [x] Text
 - [ ] Heading
 - [x] Box
 - [x] Button

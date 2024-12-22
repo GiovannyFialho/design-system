@@ -1,16 +1,15 @@
 import { Button, ButtonProps } from "@fialho-ui/react";
 import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<ButtonProps> = {
+type Story = StoryObj<ButtonProps>;
+
+export default {
   title: "Form/Button",
   component: Button,
   args: {
     children: "Enviar",
   },
-};
-
-export default meta;
-type Story = StoryObj<ButtonProps>;
+} as Meta<ButtonProps>;
 
 export const Small: Story = {};
 

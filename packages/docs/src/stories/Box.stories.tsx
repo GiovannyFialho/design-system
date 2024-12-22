@@ -1,19 +1,14 @@
-import { Box, BoxProps } from "@fialho-ui/react";
+import { Box, BoxProps, Text } from "@fialho-ui/react";
 import { Meta, StoryObj } from "@storybook/react";
 
-const meta: Meta<BoxProps> = {
+type Story = StoryObj<BoxProps>;
+
+export default {
   title: "Surfaces/Box",
   component: Box,
   args: {
-    children: (
-      <>
-        <span>Testando o elemento Box</span>
-      </>
-    ),
+    children: <Text>Testando o elemento Box</Text>,
   },
-};
-
-export default meta;
-type Story = StoryObj<BoxProps>;
+} as Meta<BoxProps>;
 
 export const Primary: Story = {};
