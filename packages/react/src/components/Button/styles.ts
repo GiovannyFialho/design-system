@@ -1,16 +1,6 @@
-import { ElementType, ReactNode } from "react";
+import { styled } from "../../styles/stitches.config";
 
-import { styled } from "../styles/stitches.config";
-
-export interface ButtonProps {
-  as?: ElementType;
-  children: ReactNode;
-  variant?: "primary" | "secondary" | "tertiary";
-  size?: "sm" | "md";
-  disabled?: boolean;
-}
-
-export const Button = styled("button", {
+export const ButtonContainer = styled("button", {
   all: "unset",
   borderRadius: "$sm",
   fontSize: "$sm",

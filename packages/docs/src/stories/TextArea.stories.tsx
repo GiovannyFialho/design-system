@@ -1,11 +1,11 @@
-import { Box, Text, TextInput, type TextInputProps } from "@fialho-ui/react";
+import { Box, Text, TextArea, type TextAreaProps } from "@fialho-ui/react";
 import { Meta, StoryObj } from "@storybook/react";
 
-type Story = StoryObj<TextInputProps>;
+type Story = StoryObj<TextAreaProps>;
 
 export default {
-  title: "Form/Text Input",
-  component: TextInput,
+  title: "Form/Text Area",
+  component: TextArea,
   args: {},
   decorators: [
     (Story) => {
@@ -14,28 +14,22 @@ export default {
           as="label"
           css={{ display: "flex", flexDirection: "column", gap: "$2" }}
         >
-          <Text size="sm">E-mail</Text>
+          <Text size="sm">Observações</Text>
           {Story()}
         </Box>
       );
     },
   ],
-} as Meta<TextInputProps>;
+} as Meta<TextAreaProps>;
 
 export const Primary: Story = {
   args: {
-    placeholder: "Digite o seu nome",
+    placeholder: "Algumas observações...",
   },
 };
 
 export const Disabled: Story = {
   args: {
     disabled: true,
-  },
-};
-
-export const WithPrefix: Story = {
-  args: {
-    prefix: "cal.com/",
   },
 };

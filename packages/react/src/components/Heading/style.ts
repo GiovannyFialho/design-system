@@ -1,14 +1,6 @@
-import { ElementType, ReactNode } from "react";
+import { styled } from "../../styles/stitches.config";
 
-import { styled } from "../styles/stitches.config";
-
-export interface HeadingProps {
-  as?: ElementType;
-  children: ReactNode;
-  size: "sm" | "md" | "lg" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl";
-}
-
-export const Heading = styled("h2", {
+export const HeadingContainer = styled("h2", {
   fontFamily: "$default",
   lineHeight: "$shorter",
   margin: 0,
