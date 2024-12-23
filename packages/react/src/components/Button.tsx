@@ -1,36 +1,84 @@
-import { ReactNode } from "react";
+import { ElementType, ReactNode } from "react";
 
-import { styled } from "./../styles/stitches.config";
+import { styled } from "../styles/stitches.config";
 
-export type ButtonProps = {
-  size: "small" | "big";
+export interface ButtonProps {
+  as?: ElementType;
   children: ReactNode;
-};
+  variant?: "primary" | "secondary" | "tertiary";
+  size?: "sm" | "md";
+  disabled?: boolean;
+}
 
 export const Button = styled("button", {
-  cursor: "pointer",
-
-  fontFamily: "$default",
-  fontWeight: "bold",
-  color: "$white",
+  all: "unset",
   borderRadius: "$sm",
-  border: 0,
-  backgroundColor: "$ignite300",
+  fontSize: "$sm",
+  fontWeight: "$medium",
+  fontFamily: "$default",
+  textAlign: "center",
+  minWidth: 120,
+  boxSizing: "border-box",
+  padding: "0 $4",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  gap: "$2",
+  cursor: "pointer",
+  svg: {
+    width: "$4",
+    height: "$4",
+  },
+  "&:disabled": {
+    cursor: "not-allowed",
+  },
 
   variants: {
-    size: {
-      small: {
-        fontSize: 14,
-        padding: "$2 $4",
+    variant: {
+      primary: {
+        color: "$white",
+        background: "$ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite300",
+        },
+        "&:disabled": {
+          backgroundColor: "$gray200",
+        },
       },
-      big: {
-        fontSize: 16,
-        padding: "$3 $6",
+      secondary: {
+        color: "$ignite300",
+        border: "2px solid $ignite500",
+        "&:not(:disabled):hover": {
+          background: "$ignite500",
+          color: "$white",
+        },
+        "&:disabled": {
+          color: "$gray200",
+          borderColor: "$gray200",
+        },
+      },
+      tertiary: {
+        color: "$gray100",
+        "&:not(:disabled):hover": {
+          color: "$white",
+        },
+        "&:disabled": {
+          color: "$gray600",
+        },
+      },
+    },
+    size: {
+      sm: {
+        height: 38,
+      },
+      md: {
+        height: 46,
       },
     },
   },
 
   defaultVariants: {
-    size: "small",
+    variant: "primary",
+    size: "md",
   },
 });
