@@ -4,7 +4,7 @@ import { TextContainer } from "./styles";
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
   as?: ElementType;
-  size:
+  size?:
     | "xxs"
     | "xs"
     | "sm"
