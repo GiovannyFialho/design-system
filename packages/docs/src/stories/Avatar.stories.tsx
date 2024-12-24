@@ -10,6 +10,13 @@ export default {
     src: "https://github.com/GiovannyFialho.png",
     alt: "Giovanny Fialho",
   },
+  argTypes: {
+    src: {
+      control: {
+        type: "text",
+      },
+    },
+  },
 } as Meta<AvatarProps>;
 
 export const Primary: Story = {};

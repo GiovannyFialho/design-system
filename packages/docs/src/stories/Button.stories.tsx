@@ -9,10 +9,35 @@ export default {
   component: Button,
   args: {
     children: "Enviar",
+    variant: "primary",
+    size: "md",
+  },
+  argTypes: {
+    variant: {
+      options: ["primary", "secondary", "tertiary"],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    size: {
+      options: ["sm", "md"],
+      control: {
+        type: "inline-radio",
+      },
+    },
+    disabled: {
+      control: {
+        type: "boolean",
+      },
+    },
   },
 } as Meta<ButtonProps>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: {
+    disabled: false
+  }
+};
 
 export const Secondary: Story = {
   args: {
