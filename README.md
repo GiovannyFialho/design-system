@@ -1,4 +1,4 @@
-# Design System 🧑🏻‍💻
+# Fialho UI 🧑🏻‍💻
 
 ## Tokens
 - [x] Fonts
