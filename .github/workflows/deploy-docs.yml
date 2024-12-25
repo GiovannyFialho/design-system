@@ -27,12 +27,8 @@ jobs:
         working-directory: ./packages/docs
         run: npm run build
 
-      - name: Deploy Storybook to GitHub Pages
+      - name: Deploy storybook
         working-directory: ./packages/docs
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/GiovannyFialho/fialho-ui.git
-          npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
