@@ -25,12 +25,15 @@ const config: StorybookConfig = {
     name: getAbsolutePath("@storybook/react-vite"),
     options: {},
   },
-  viteFinal: (config, { configType }) => {
+  viteFinal: (viteConfig, { configType }) => {
     if (configType === "PRODUCTION") {
-      config.base = "/fialho-ui/";
+      viteConfig.base = "/fialho-ui/";
     }
 
-    return config;
+    console.log("Vite config:", viteConfig);
+
+    return viteConfig;
   },
 };
+
 export default config;
