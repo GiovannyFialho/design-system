@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build all packages
+        run: npm run build
+
       - name: Build Storybook
         working-directory: ./packages/docs
         run: npm run build
@@ -27,7 +30,7 @@ jobs:
       - name: Deploy Storybook to GitHub Pages
         working-directory: ./packages/docs
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # O token do GitHub será usado aqui
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
