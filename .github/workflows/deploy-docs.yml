@@ -9,7 +9,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -17,12 +17,19 @@ jobs:
         with:
           node-version: 22
 
-      - run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-      - run: npm run build
-
-      - name: Deploy storybook
+      - name: Build Storybook
         working-directory: ./packages/docs
-        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        run: npm run build
+
+      - name: Deploy Storybook to GitHub Pages
+        working-directory: ./packages/docs
         env:
-          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} # O token do GitHub será usado aqui
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/GiovannyFialho/fialho-ui.git
+          npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
