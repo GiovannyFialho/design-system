@@ -30,8 +30,6 @@ const config: StorybookConfig = {
       viteConfig.base = "/fialho-ui/";
     }
 
-    console.log("Vite config:", viteConfig);
-
     return viteConfig;
   },
 };

@@ -27,6 +27,14 @@ jobs:
         working-directory: ./packages/docs
         run: npm run build
 
+      - name: Debug Build Output
+        working-directory: ./packages/docs
+        run: |
+          echo "Listing files in storybook-static"
+          ls -la ./storybook-static
+          echo "Preview of index.html"
+          head -n 20 ./storybook-static/index.html
+
       - name: Deploy storybook
         working-directory: ./packages/docs
         run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
