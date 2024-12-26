@@ -15,12 +15,18 @@ export const ButtonContainer = styled("button", {
   justifyContent: "center",
   gap: "$2",
   cursor: "pointer",
+
   svg: {
     width: "$4",
     height: "$4",
   },
+
   "&:disabled": {
     cursor: "not-allowed",
+  },
+
+  "&:focus": {
+    boxShadow: "0 0 0 2px $colors$gray100",
   },
 
   variants: {
