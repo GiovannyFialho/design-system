@@ -33,19 +33,19 @@ export const ButtonContainer = styled("button", {
     variant: {
       primary: {
         color: "$white",
-        background: "$ignite500",
+        background: "$fialho500",
         "&:not(:disabled):hover": {
-          background: "$ignite300",
+          background: "$fialho300",
         },
         "&:disabled": {
           backgroundColor: "$gray200",
         },
       },
       secondary: {
-        color: "$ignite300",
-        border: "2px solid $ignite500",
+        color: "$fialho300",
+        border: "2px solid $fialho500",
         "&:not(:disabled):hover": {
-          background: "$ignite500",
+          background: "$fialho500",
           color: "$white",
         },
         "&:disabled": {

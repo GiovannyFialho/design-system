@@ -6,7 +6,17 @@ type Story = StoryObj<TextInputProps>;
 export default {
   title: "Form/Text Input",
   component: TextInput,
-  args: {},
+  args: {
+    range: "md",
+  },
+  argTypes: {
+    range: {
+      options: ["sm", "md"],
+      control: {
+        type: "select",
+      },
+    },
+  },
   decorators: [
     (Story) => {
       return (
