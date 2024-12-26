@@ -1,4 +1,5 @@
 # Fialho UI 🧑🏻‍💻
+[Documentation](https://giovannyfialho.github.io/fialho-ui/?path=/docs/home--docs)
 
 ## Tokens
 - [x] Fonts
