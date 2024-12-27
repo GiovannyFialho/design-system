@@ -1,0 +1,3 @@
+import{j as t}from"./index-DBBjsPzo.js";import{useMDXComponents as i}from"./index-BEqo9vi-.js";import{ae as r}from"./index-bzjSX9Wp.js";import"./index-BzhKaBtb.js";import"./_commonjsHelpers-CqkleIqs.js";import"./index-DCY-Pets.js";import"./iframe-BugEFEOe.js";import"../sb-preview/runtime.js";import"./index-CLqDXS6w.js";import"./index-CHGET4sZ.js";import"./index-DrFu-skq.js";function e(o){const n={h1:"h1",p:"p",...i(),...o.components};return t.jsxs(t.Fragment,{children:[t.jsx(r,{title:"Home"}),`
+`,t.jsx(n.h1,{id:"fialho-ui",children:"Fialho UI"}),`
+`,t.jsx(n.p,{children:"Design System do Fialho."})]})}function f(o={}){const{wrapper:n}={...i(),...o.components};return n?t.jsx(n,{...o,children:t.jsx(e,{...o})}):e(o)}export{f as default};
