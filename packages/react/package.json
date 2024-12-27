@@ -1,6 +1,6 @@
 {
   "name": "@fialho-ui/react",
-  "version": "6.0.0",
+  "version": "7.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -14,7 +14,13 @@
     "build": "tsup src/index.tsx --format esm,cjs --dts --external react",
     "dev": "tsup src/index.tsx --format esm,cjs --dts --external react --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "react components",
+    "design system",
+    "fialho-ui",
+    "react ui"
+  ],
   "author": "",
   "license": "MIT",
   "description": "",

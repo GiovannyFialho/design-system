@@ -1,5 +1,11 @@
 # @fialho-ui/react
 
+## 7.0.0
+
+### Major Changes
+
+- Adicionando keywords no package json dos pacotes publicos
+
 ## 6.0.0
 
 ### Major Changes

@@ -1,6 +1,6 @@
 {
   "name": "@fialho-ui/tokens",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -14,7 +14,14 @@
     "build": "tsup src/index.ts --format esm,cjs --dts",
     "dev": "tsup src/index.ts --format esm,cjs --dts --watch"
   },
-  "keywords": [],
+  "keywords": [
+    "design tokens",
+    "css tokens",
+    "fialho-ui",
+    "ui tokens",
+    "design system tokens",
+    "frontend design"
+  ],
   "author": "",
   "license": "MIT",
   "description": "",

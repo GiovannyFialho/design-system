@@ -1,5 +1,11 @@
 # @fialho-ui/tokens
 
+## 5.0.0
+
+### Major Changes
+
+- Adicionando keywords no package json dos pacotes publicos
+
 ## 4.0.0
 
 ### Major Changes
