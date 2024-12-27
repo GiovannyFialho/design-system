@@ -1,42 +1,76 @@
 import { X } from "phosphor-react";
 import { ComponentProps } from "react";
 
+import { Text } from "../Text";
+
 import {
-  ContainerTitle,
-  ToastAction,
+  ToastClose,
+  ToastContainer,
   ToastDescription,
-  ToastProvider,
-  ToastRoot,
+  ToastHead,
+  ToastPrimitiveProvider,
   ToastTitle,
+  ToastViewport,
 } from "./styles";
 
-export interface ToastProps extends ComponentProps<typeof ToastRoot> {
+export interface ToastProps extends ComponentProps<typeof ToastContainer> {
   title: string;
-  description?: string;
-  onActionClick?: () => void;
+  description: string;
+  isOpen?: boolean;
+  swipeDirection?: "left" | "right" | "up" | "down";
+  handleChange: () => void;
+}
+
+export interface ToastProviderProps
+  extends ComponentProps<typeof ToastPrimitiveProvider> {
+  children?: React.ReactNode;
+  swipeDirection?: "left" | "right" | "up" | "down";
+}
+
+export function ToastProvider({ children, ...props }: ToastProviderProps) {
+  return (
+    <ToastPrimitiveProvider {...props}>
+      {children}
+      <ToastViewport />
+    </ToastPrimitiveProvider>
+  );
 }
 
 export function Toast({
   title,
   description,
-  onActionClick,
+  isOpen,
+  swipeDirection = "right",
+  handleChange,
   ...props
 }: ToastProps) {
   return (
-    <ToastProvider>
-      <ToastRoot {...props}>
-        <ContainerTitle>
-          <ToastTitle>{title}</ToastTitle>
+    <ToastContainer
+      open={isOpen}
+      onOpenChange={handleChange}
+      swipeDirection={swipeDirection}
+      {...props}
+    >
+      <ToastHead>
+        {title && (
+          <ToastTitle asChild>
+            <Text as="strong" size="xl">
+              {title}
+            </Text>
+          </ToastTitle>
+        )}
+        <ToastClose aria-label="Close" onClick={handleChange}>
+          <X size={20} aria-hidden />
+        </ToastClose>
+      </ToastHead>
 
-          <ToastAction asChild altText="close toast">
-            <button type="button" onClick={onActionClick}>
-              <X />
-            </button>
-          </ToastAction>
-        </ContainerTitle>
-
-        {description && <ToastDescription>{description}</ToastDescription>}
-      </ToastRoot>
-    </ToastProvider>
+      {description && (
+        <ToastDescription asChild>
+          <Text size="sm">{description}</Text>
+        </ToastDescription>
+      )}
+    </ToastContainer>
   );
 }
+
+Toast.displayName = "Toast";

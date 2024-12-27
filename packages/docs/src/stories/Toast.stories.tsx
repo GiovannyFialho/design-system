@@ -1,6 +1,12 @@
-import { Button, Toast, type ToastProps } from "@fialho-ui/react";
+import {
+  Button,
+  Toast,
+  type ToastProps,
+  ToastProvider,
+} from "@fialho-ui/react";
+import { useArgs, useCallback } from "@storybook/client-api";
 import { Meta, StoryObj } from "@storybook/react";
-import { useState } from "react";
+import { useEffect, useRef } from "react";
 
 type Story = StoryObj<ToastProps>;
 
@@ -8,36 +14,51 @@ export default {
   title: "Surfaces/Toast",
   component: Toast,
   args: {
-    title: "Notification",
-    description: "This is a toast message.",
+    title: "Título do Toast",
+    description: "Descrição do toast",
+    isOpen: false,
+    swipeDirection: "right",
   },
   argTypes: {
-    onActionClick: { action: "action clicked" },
+    swipeDirection: {
+      options: ["left", "right", "up", "down"],
+      control: {
+        type: "radio",
+      },
+    },
   },
+  decorators: [
+    (Story) => {
+      const [args, updateArgs] = useArgs();
+
+      const timerRef = useRef(0);
+
+      const setOpen = useCallback(() => {
+        updateArgs({ isOpen: !args.isOpen });
+      }, [updateArgs, args.isOpen]);
+
+      useEffect(() => {
+        updateArgs({ handleChange: setOpen });
+
+        return () => clearTimeout(timerRef.current);
+      }, [updateArgs, setOpen]);
+
+      function handleClick() {
+        setOpen();
+        window.clearTimeout(timerRef.current);
+        timerRef.current = window.setTimeout(() => {
+          setOpen();
+        }, 3000);
+      }
+
+      return (
+        <ToastProvider swipeDirection={args.swipeDirection}>
+          <Button onClick={handleClick}>Ativar Toast</Button>
+          <Story />
+        </ToastProvider>
+      );
+    },
+  ],
 } as Meta<ToastProps>;
 
-const ToastWrapper = ({ args }: { args: ToastProps }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleToastOpen = () => {
-    setOpen(true);
-  };
-
-  const handleToastClose = () => {
-    setOpen(false);
-  };
-
-  return (
-    <div>
-      <Button size="sm" onClick={handleToastOpen}>
-        Show Toast
-      </Button>
-
-      {open && <Toast {...args} onActionClick={handleToastClose} />}
-    </div>
-  );
-};
-
-export const Primary: Story = {
-  render: (args) => <ToastWrapper args={args} />,
-};
+export const Primary: Story = {};
