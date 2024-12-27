@@ -1,5 +1,11 @@
 # @fialho-ui/react
 
+## 4.0.0
+
+### Major Changes
+
+- criacao do componente tooltip
+
 ## 3.0.0
 
 ### Major Changes

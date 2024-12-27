@@ -3,8 +3,8 @@ import { styled } from "../../styles/stitches.config";
 export const TextContainer = styled("p", {
   fontFamily: "$default",
   lineHeight: "$base",
-  margin: 0,
   color: "$gray100",
+  margin: 0,
 
   variants: {
     size: {
