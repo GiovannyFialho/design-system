@@ -1,5 +1,11 @@
 # @fialho-ui/react
 
+## 6.0.0
+
+### Major Changes
+
+- Adicionando documentacao nos pacotes react e tokens
+
 ## 5.0.0
 
 ### Major Changes
